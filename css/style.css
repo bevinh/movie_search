@@ -195,7 +195,7 @@ button {
 }
 .wrap-small-poster {
   padding: 10px 10px 3px 10px;
-  background: gray;
+  background: white;
   width: 220px;
   margin-left: 20px;
 }
@@ -227,6 +227,10 @@ button {
   color: white;
   border-radius: 3px;
   font-weight: bold;
+}
+.wrap {
+  width: 100%;
+  background-color: white;
 }
 /* ================================= 
   Helper Classes
