@@ -39,7 +39,7 @@ $.getJSON(url, data, function(data){
 
             });
         } else {
-            listingHTML += "<li class='no-movies'><i class='material-icons icon-help'>help_outline</i>No movies found that match: " + searchText + ".</li>"
+            listingHTML += "<li class='no-movies'><i class='material-icons icon-help'>help_outline</i>No movies found that match: " + searchText + ".</li>";
         }
 
         $("#movies").append(listingHTML);
@@ -56,7 +56,7 @@ $.getJSON(url, data, function(data){
                 r: "json",
                 page: "1",
                 callback: ""
-            }
+            };
 
             $.getJSON(url, descData, function(movie) {
                 //gets the specific movie description from imdb when the movie icon is clicked
@@ -65,7 +65,7 @@ $.getJSON(url, data, function(data){
                 } else {
                     descHTML += '<div class="wrap-small-poster"><div class="poster-wrap small-poster"><img src="' + movie.Poster + '"/></div></div>';
                 }
-                descHTML +=  '<div class="description-text"><div><span class="title-description white">' + movie.Title + '(' + movie.Year + ')</span></div><div><span class="imdb-rating gray">IMDB Rating ' + movie.imdbRating + '</span></div></div>'
+                descHTML +=  '<div class="description-text"><div><span class="title-description white">' + movie.Title + '(' + movie.Year + ')</span></div><div><span class="imdb-rating gray">IMDB Rating ' + movie.imdbRating + '</span></div></div>';
                 descHTML += '</div><div class="wrap"><div class="synopsis"><span class="synopsis-title">Plot Synopsis:</span>';
                 descHTML += '<p class="synopsis-text">' + movie.Plot + '</p>';
                 descHTML += '<button id="button-imdb" class="button-imdb">View on IMDB</button></div>';
