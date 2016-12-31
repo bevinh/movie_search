@@ -22,7 +22,6 @@ $.getJSON(url, data, function(data){
     //retrieves the list of movies
         if(data.Search) {
             $.each(data.Search, function (id, movie) {
-                console.log(data.Search);
                     if (movie.Poster === "N/A") {
                         listingHTML += "<li id='" + movie.imdbID + "'><div class='poster-wrap'><i class='material-icons poster-placeholder'>crop_original</i></div>";
                     } else {
@@ -48,7 +47,7 @@ $.getJSON(url, data, function(data){
             //gets rid of any old html in there from a previous retrieval
             $("#descHTML").empty();
             //sets up the description html
-            var descHTML =  '<div id="descHTML"><div class="topbar-description"><div id="backNav"><i class="material-icons white">keyboard_arrow_left</i><span class="small-text white">Search Results</span></div>';
+            var descHTML =  '<div id="descHTML"><div class="topbar-description"><div id="backNav"><i class="material-icons white">keyboard_arrow_left</i><span class="small-text gray">Search Results</span></div>';
 
             var descData = {
                 i: movie,

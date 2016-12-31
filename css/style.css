@@ -205,6 +205,8 @@ button {
 }
 .small-text {
   font-size: 0.9em;
+  position: relative;
+  top: -6px;
 }
 .synopsis {
   width: 65%;
