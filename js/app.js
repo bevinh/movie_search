@@ -15,9 +15,9 @@ $(".search-form").submit(function(evt){
         page: "1",
         callback: ""
     };
-var descHTML =  '<div id="descHTML"><div class="topbar-description"><div id="backNav"><i class="material-icons white">keyboard_arrow_left</i><span class="small-text white">Search Results</span></div>';
 
 $.getJSON(url, data, function(data){
+    //retrieves the list of movies
         if(data.Search) {
             $.each(data.Search, function (id, movie) {
                 console.log(data.Search);
@@ -43,7 +43,11 @@ $.getJSON(url, data, function(data){
         $("#movies").append(listingHTML);
         function getDescription (){
             var movie = $(this).attr('id');
+            //gets rid of any old html in there from a previous retrieval
             $("#descHTML").empty();
+            //sets up the description html
+            var descHTML =  '<div id="descHTML"><div class="topbar-description"><div id="backNav"><i class="material-icons white">keyboard_arrow_left</i><span class="small-text white">Search Results</span></div>';
+
             var descData = {
                 i: movie,
                 type: "Movie",
@@ -53,6 +57,7 @@ $.getJSON(url, data, function(data){
             }
 
             $.getJSON(url, descData, function(movie) {
+                //gets the specific movie description from imdb when the movie icon is clicked
                 if (movie.Poster === "N/A") {
                     descHTML += '<div class="wrap-small-poster"><div class="poster-wrap small-poster"><i class="material-icons poster-placeholder">crop_original</i></div></div>';
                 } else {
@@ -61,28 +66,30 @@ $.getJSON(url, data, function(data){
                 descHTML +=  '<div class="description-text"><div><span class="title-description white">' + movie.Title + '(' + movie.Year + ')</span></div><div><span class="imdb-rating gray">IMDB Rating ' + movie.imdbRating + '</span></div></div>'
                 descHTML += '</div><div class="wrap"><div class="synopsis"><span class="synopsis-title">Plot Synopsis:</span>';
                 descHTML += '<p class="synopsis-text">' + movie.Plot + '</p>';
-                descHTML += '<button class="button-imdb">View on IMDB</button></div>';
+                descHTML += '<button id="button-imdb" class="button-imdb">View on IMDB</button></div>';
                 $("#movies").hide();
                 $(".main-content").append(descHTML);
                 function returnToSearch(){
                     $("#descHTML").remove();
                     $("#movies").show();
                     movie = '';
-                    //TODO: Figure out why it's not clearing the data
+                }
+                function viewOnIMDB(){
+                    var imdb = 'http://www.imdb.com/title/' + movie.imdbID;
+                    window.open(imdb);
                 }
                 document.getElementById("backNav").addEventListener('click', returnToSearch);
+                document.getElementById("button-imdb").addEventListener('click', viewOnIMDB);
             });
 
-            //$('#backNav').addEventListener('click', returnToSearch);
-        }
 
+        }
+        //adds the description function to each click
         $('li').each(function(index){
             this.addEventListener('click', getDescription);
         });
     });
 
 });
-
-
     return App;
 })();
