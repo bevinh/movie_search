@@ -4,7 +4,7 @@ $(".search-form").submit(function(evt){
     evt.preventDefault();
     var searchText = $("#search").val();
     var url = "http://www.omdbapi.com/";
-    var listingHTML;
+    var listingHTML = '';
     //empty out the movies to prevent search results appending endlessly
     $("#movies").empty();
     $(".desc").remove();
@@ -17,7 +17,6 @@ $(".search-form").submit(function(evt){
         callback: ""
     };
     $.getJSON(url, data, function(data){
-
         console.log(data.Search);
         if(data.Search) {
             $.each(data.Search, function (id, movie) {
@@ -38,5 +37,5 @@ $(".search-form").submit(function(evt){
         $("#movies").append(listingHTML);
     });
 });
-//TODO: For some reason I have "undefined" showing up. No clue as to why.
+
 })();
