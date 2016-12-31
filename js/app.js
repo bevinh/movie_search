@@ -2,6 +2,7 @@ var App = (function(){
 $(".search-form").submit(function(evt){
     evt.preventDefault();
     var searchText = $("#search").val();
+    var year = $("#year").val();
     var url = "http://www.omdbapi.com/";
     var listingHTML = '';
     //empty out the movies to prevent search results appending endlessly
@@ -12,6 +13,7 @@ $(".search-form").submit(function(evt){
         s: searchText,
         type: "Movie",
         r: "json",
+        y: year,
         page: "1",
         callback: ""
     };
