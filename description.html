@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Movie Search</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="main-header">
+    <div class="inner">
+        <h1 class="main-title">MovieSearch</h1>
+        <form class="search-form">
+            <label class="is-hidden" for="search">Search a title</label>
+            <input type="search" name="search" id="search" placeholder="Search a Title...">
+
+            <!-- ==============================================================
+                 Comment out <label> and <input> below to filter search by year
+                 ============================================================== -->
+
+            <!--
+              <label class="is-hidden" for="year">Any Year</label>
+              <input type="text" maxlength="4" name="year" id="year" placeholder="Year">
+            -->
+
+            <button type="submit" id="submit" class="search-button"><i class="material-icons icn-search">search</i></button>
+        </form>
+    </div>
+</div>
+
+<div class="topbar-description">
+    <i class="material-icons white">keyboard_arrow_left</i><span class="small-text white">Search Results</span>
+    <div class="wrap-small-poster">
+        <div class="poster-wrap small-poster"><i class="material-icons poster-placeholder">crop_original</i></div>
+    </div>
+<div class="description-text">
+    <div><span class="title-description white">The Yellow Sea(2010)</span></div>
+    <div><span class="imdb-rating gray">IMDB Rating 7.9</span></div>
+</div>
+
+</div>
+<div class="synopsis">
+    <span class="synopsis-title">Plot Synopsis:</span>
+    <p class="synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus libero ut magna ullamcorper, id porta ligula congue. Sed lacus odio, laoreet ut ipsum id, ultricies gravida magna. Nulla fermentum justo sed velit bibendum aliquet. Aliquam erat volutpat. Fusce elementum dui sed vulputate aliquam. Donec pulvinar dapibus odio, at convallis massa convallis ut. Phasellus elit felis, hendrerit vitae mattis vel, mollis quis ex. Donec eu volutpat ipsum. Sed id mi ac velit tempor sodales. Phasellus nec semper elit. Duis lacus tellus, laoreet eget nunc sit amet, mattis vehicula enim. Proin lacinia quam at viverra laoreet. Nullam eu nisi dignissim, mollis ipsum vitae, pharetra diam. Curabitur id justo semper nisl consectetur euismod eget fringilla justo.</p>
+    <button class="button-imdb">View on IMDB</button>
+</div>
+</body>
+</html>

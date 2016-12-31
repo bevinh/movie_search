@@ -160,7 +160,12 @@ button {
   max-width: 1025px;
   margin: auto;
 }
-
+.white {
+  color: white;
+}
+.gray {
+  color: #9F9F9F;
+}
 .main-header {
   position: fixed;
   top: 0;
@@ -170,7 +175,59 @@ button {
   min-height: 80px;
   z-index: 1000;
 }
-
+.topbar-description {
+  width: 100%;
+  background-color: #4A4A4A;
+  height: 200px;
+}
+.description-text {
+  display: inline-block;
+  width: 600px;
+  position: relative;
+  top: -250px;
+  left: 300px;
+}
+.imdb-rating {
+  font-size: 1em;
+}
+.title-description {
+  font-size: 1.75em;
+}
+.wrap-small-poster {
+  padding: 10px 10px 3px 10px;
+  background: gray;
+  width: 220px;
+  margin-left: 20px;
+}
+.small-poster {
+  height: 80px;
+  width: 200px;
+}
+.small-text {
+  font-size: 0.9em;
+}
+.synopsis {
+  width: 65%;
+  margin-left: 280px;
+  padding: 20px;
+}
+.synopsis-title {
+  font-size: 1em;
+  font-weight: bold;
+}
+.synopsis-text {
+  color: #9F9F9F;
+  font-size: 0.95em;
+}
+.button-imdb {
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  background: turquoise;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+}
 /* ================================= 
   Helper Classes
 ==================================== */
@@ -200,6 +257,25 @@ button {
   .movie-list li {
     text-align: center;
   }
+  .synopsis {
+    width: 100%;
+    margin: 100px 0px;
+    padding: 10px;
+  }
+  .description-text {
+    display: block;
+    top: 100px;
+    width: 100%;
+    left: 10px;
+    clear: both;
+  }
+  .imdb-rating {
+    color: #4A4A4A;
+  }
+  .title-description {
+    color: #4A4A4A;
+  }
+
 }
 
 @media (min-width: 550px) {
